@@ -166,18 +166,18 @@ void danhSachSinhVienTenBatDauBangN(const sinhvien *sv, int n) {
 }
 
 void Menu (){
-    cout << "/t/t================MENU================" << endl;
-    cout << "/t/t1. Nhap thong tin 1 sinh vien. "<< endl;
-    cout << "/t/t2. Nhap thong tin danh sach sinh vien. "<< endl;
-    cout << "/t/t3. In thong tin 1 sinh vien. "<< endl;
-    cout << "/t/t4. Hien thi danh sach sinh vien. "<< endl;
-    cout << "/t/t5. Sua thong tin 1 sinh vien. "<< endl;
-    cout << "/t/t6. Chen thong tin 1 sinh vien. " << endl;
-    cout << "/t/t7. Sap xep danh sach theo diem. " << endl;
-    cout << "/t/t8. Sinh vien diem cao nhat. " << endl;
-    cout << "/t/t9. Sinh vien nam cao diem nhat & sinh vien nu thap diem nhat. " << endl;
-    cout << "/t/t10. Danh sach sinh vien ten bat dau bang chu 'N'. "<< endl;
-    cout << "/t/t====================================" <<endl;
+    cout << "\t\t================MENU================" << endl;
+    cout << "\t\t1. Nhap thong tin 1 sinh vien. "<< endl;
+    cout << "\t\t2. Nhap thong tin danh sach sinh vien. "<< endl;
+    cout << "\t\t3. In thong tin 1 sinh vien. "<< endl;
+    cout << "\t\t4. Hien thi danh sach sinh vien. "<< endl;
+    cout << "\t\t5. Sua thong tin 1 sinh vien. "<< endl;
+    cout << "\t\t6. Chen thong tin 1 sinh vien. " << endl;
+    cout << "\t\t7. Sap xep danh sach theo diem. " << endl;
+    cout << "\t\t8. Sinh vien diem cao nhat. " << endl;
+    cout << "\t\t9. Sinh vien nam cao diem nhat & sinh vien nu thap diem nhat. " << endl;
+    cout << "\t\t10. Danh sach sinh vien ten bat dau bang chu 'N'. "<< endl;
+    cout << "\t\t====================================" <<endl;
 }
 
 int main(){
