@@ -9,7 +9,7 @@ struct sinhvien{
     float diem;
 };
 
-void nhapthongtinmotsv(sinhvien *sv){
+void Nhapthongtinmotsv(sinhvien *sv){
     cout << "Nhap ten sinh vien: ";
     cin.ignore();
     getline(cin, sv->hoten);
@@ -39,27 +39,27 @@ void nhapthongtinmotsv(sinhvien *sv){
     } while (sv->diem < 0 || sv->diem > 10);
 }
 
-void nhapds(sinhvien *sv, int n){
+void Nhapds(sinhvien *sv, int n){
     for(int i=0; i<n; i++) 
 	{
 		cout<<"Sinh vien thu "<<i+1<<endl;
-        nhapthongtinmotsv(&sv[i]);
+        Nhapthongtinmotsv(&sv[i]);
     }
 }
 
-void inthongtin(const sinhvien& sv){
+void Inthongtin(const sinhvien& sv){
     cout << "Ho ten: " << sv.hoten << endl;
     cout << "Ngay sinh: " << sv.ngaysinh << endl;
     cout << "Gioi tinh: " << sv.gioitinh << endl;
     cout << "Diem: "<< sv.diem << endl;
 }
 
-void hienthidanhsach(sinhvien sv[], int n){
+void Hienthidanhsach(sinhvien sv[], int n){
 	
 	for (int i = 0; i < n; i++) 
 	{
         cout << "Sinh vien thu "<< i+1 <<": "<< endl;
-        inthongtin(sv[i]);
+        Inthongtin(sv[i]);
         cout << "-------------------------" << endl;
     }
 }
@@ -94,13 +94,13 @@ void Suathongtin(sinhvien &sv){
     } while (sv.diem < 0 || sv.diem > 10);
 }
 
-void chenThongTinSinhVien(sinhvien *sv, int &n) {
+void Chenthongtinsinhvien(sinhvien *sv, int &n) {
     int vitri;
     cout << "Nhap vi tri muon chen: ";
     cin >> vitri;
     if (vitri >= 1 && vitri <= n + 1) {
         sinhvien svMoi;
-        nhapthongtinmotsv (&svMoi);
+        Nhapthongtinmotsv (&svMoi);
         for (int i = n; i >= vitri; i--) {
             sv[i] = sv[i - 1];
         }
@@ -112,7 +112,7 @@ void chenThongTinSinhVien(sinhvien *sv, int &n) {
     }
 }
 
-void sapXepTheoDiemGiamDan(sinhvien *sv, int n) {
+void Sapxeptheodiemgiamdan(sinhvien *sv, int n) {
 		for (int i = 0; i < n - 1; i++) {
         	for (int j = i + 1; j < n; j++) {
             	if (sv[i].diem < sv[j].diem) {
@@ -122,7 +122,7 @@ void sapXepTheoDiemGiamDan(sinhvien *sv, int n) {
     	}
 }
 
-sinhvien timSinhVienDiemCaoNhat(const sinhvien *sv, int n){
+sinhvien Timsinhviendiemcaonhat(const sinhvien *sv, int n){
     sinhvien svMax = sv[0];
     for (int i = 1; i < n; ++i) {
         if (sv[i].diem > svMax.diem) {
@@ -132,7 +132,7 @@ sinhvien timSinhVienDiemCaoNhat(const sinhvien *sv, int n){
     return svMax;
 }
 
-void sinhVienNamCaoDiemNhatVaNuThapDiemNhat(const sinhvien *sv, int n) {
+void Sinhviennamcaodiemnhatvanuthapdiemnhat(const sinhvien *sv, int n) {
     sinhvien svNamMax = {"", 0, 'M', 0};
     sinhvien svNuMin = {"", 0, 'F', 10};
 
@@ -146,20 +146,20 @@ void sinhVienNamCaoDiemNhatVaNuThapDiemNhat(const sinhvien *sv, int n) {
     }
 
     cout << "Sinh vien nam co diem cao nhat: " << endl;
-    inthongtin(svNamMax);
+    Inthongtin(svNamMax);
     cout << "-------------------------" << endl;
     cout << "Sinh vien nu co diem thap nhat: " << endl;
-    inthongtin(svNuMin);
+    Inthongtin(svNuMin);
     cout << "-------------------------" << endl;
 }
 
-void danhSachSinhVienTenBatDauBangN(const sinhvien *sv, int n) {
+void DanhsachsinhvientenbatdaubangN(const sinhvien *sv, int n) {
 	cout << "Danh sach sinh vien co ten bat dau bang chu 'N': "<<endl;
     for(int i = 0; i < n; ++i) 
 	{
         if (sv[i].hoten[0] == 'N') 
 		{
-            inthongtin(sv[i]);
+            Inthongtin(sv[i]);
             cout<<"-------------------------" << endl;
         }
     }
@@ -193,26 +193,26 @@ int main(){
         switch (luachon){
             case 1:
                 sv1 = new sinhvien[1];
-                nhapds(sv1, 1);
+                Nhapds(sv1, 1);
                 break;
             case 2:
                 cout << "Nhap so luong sinh vien: ";
                 cin >> n;
                 sv1 = new sinhvien[n];
-                nhapds(sv1, n);
+                Nhapds(sv1, n);
                 break;
             case 3:
                 int k;
                 cout << "Nhap vi tri sinh vien can xem: ";
                 cin >> k;
                 if (k >= 1 && k <= n) {
-                    inthongtin(sv1[k - 1]); 
+                    Inthongtin(sv1[k - 1]); 
                 } else {
                     cout << "Vi tri sinh vien khong hop le!" << endl;
                 }
                 break;
             case 4:
-                hienthidanhsach(sv1, n);
+                Hienthidanhsach(sv1, n);
                 break;
             case 5:
                 int vitri;
@@ -226,25 +226,25 @@ int main(){
                 }
                 break;
             case 6:
-                chenThongTinSinhVien(sv1, n);
+                Chenthongtinsinhvien(sv1, n);
                 break;
             case 7:
-                sapXepTheoDiemGiamDan(sv1, n);
-                hienthidanhsach(sv1, n);
+                Sapxeptheodiemgiamdan(sv1, n);
+                Hienthidanhsach(sv1, n);
                 break;
             case 8:
             	{
-               	sinhvien svMax = timSinhVienDiemCaoNhat(sv1, n);
+               	sinhvien svMax = Timsinhviendiemcaonhat(sv1, n);
                 cout << "Sinh vien co diem cao nhat: " << endl;
-                inthongtin(svMax);
+                Inthongtin(svMax);
                 cout << "-------------------------" << endl;
                 break;
             }
             case 9:
-            	sinhVienNamCaoDiemNhatVaNuThapDiemNhat(sv1, n);
+            	Sinhviennamcaodiemnhatvanuthapdiemnhat(sv1, n);
                 break;
             case 10:
-			    danhSachSinhVienTenBatDauBangN(sv1, n);
+		DanhsachsinhvientenbatdaubangN(sv1, n);
                 break;
             case 0:
                 cout << "Ket thuc chuong trinh." << endl;
