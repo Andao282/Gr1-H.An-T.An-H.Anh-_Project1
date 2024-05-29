@@ -94,18 +94,6 @@ void Suathongtin(sinhvien &sv){
     } while (sv.diem < 0 || sv.diem > 10);
 }
 
-void suaThongTinDanhSach(sinhvien *sv, int n) {
-    int k;
-    cout << "Nhap vi tri sinh vien muon sua: ";
-    cin >> k;
-    if (k >= 1 && k <= n) {
-        Suathongtin(sv[k - 1]); 
-        cout << "Da sua thong tin cho sinh vien thu " << k << endl;
-    } else {
-        cout << "Vi tri sinh vien khong hop le!" << endl;
-    }
-}
-
 void chenThongTinSinhVien(sinhvien *sv, int &n) {
     int vitri;
     cout << "Nhap vi tri muon chen: ";
@@ -178,19 +166,18 @@ void danhSachSinhVienTenBatDauBangN(const sinhvien *sv, int n) {
 }
 
 void Menu (){
-    cout << "================MENU================" << endl;
-    cout << "1. Nhap thong tin 1 sinh vien. "<< endl;
-    cout << "2. Nhap thong tin danh sach sinh vien. "<< endl;
-    cout << "3. In thong tin 1 sinh vien. "<< endl;
-    cout << "4. Hien thi danh sach sinh vien. "<< endl;
-    cout << "5. Sua thong tin 1 sinh vien. "<< endl;
-    cout << "6. Sua thong tin danh sach sinh vien. "<< endl;
-    cout << "7. Chen thong tin 1 sinh vien. " << endl;
-    cout << "8. Sap xep danh sach theo diem. " << endl;
-    cout << "9. Sinh vien diem cao nhat. " << endl;
-    cout << "10. Sinh vien nam cao diem nhat & sinh vien nu thap diem nhat. " << endl;
-    cout << "11. Danh sach sinh vien ten bat dau bang chu 'N'. "<< endl;
-    cout << "====================================" <<endl;
+    cout << "/t/t================MENU================" << endl;
+    cout << "/t/t1. Nhap thong tin 1 sinh vien. "<< endl;
+    cout << "/t/t2. Nhap thong tin danh sach sinh vien. "<< endl;
+    cout << "/t/t3. In thong tin 1 sinh vien. "<< endl;
+    cout << "/t/t4. Hien thi danh sach sinh vien. "<< endl;
+    cout << "/t/t5. Sua thong tin 1 sinh vien. "<< endl;
+    cout << "/t/t6. Chen thong tin 1 sinh vien. " << endl;
+    cout << "/t/t7. Sap xep danh sach theo diem. " << endl;
+    cout << "/t/t8. Sinh vien diem cao nhat. " << endl;
+    cout << "/t/t9. Sinh vien nam cao diem nhat & sinh vien nu thap diem nhat. " << endl;
+    cout << "/t/t10. Danh sach sinh vien ten bat dau bang chu 'N'. "<< endl;
+    cout << "/t/t====================================" <<endl;
 }
 
 int main(){
@@ -200,7 +187,7 @@ int main(){
     
     do {
         Menu();
-        cout << "Nhap lua chon cua ban (1-11): ";
+        cout << "Nhap lua chon cua ban (1-10): ";
         cin >> luachon;
         
         switch (luachon){
@@ -239,16 +226,13 @@ int main(){
                 }
                 break;
             case 6:
-                suaThongTinDanhSach(sv1, n);
-                break;
-            case 7:
                 chenThongTinSinhVien(sv1, n);
                 break;
-            case 8:
+            case 7:
                 sapXepTheoDiemGiamDan(sv1, n);
                 hienthidanhsach(sv1, n);
                 break;
-            case 9:
+            case 8:
             	{
                	sinhvien svMax = timSinhVienDiemCaoNhat(sv1, n);
                 cout << "Sinh vien co diem cao nhat: " << endl;
@@ -256,10 +240,10 @@ int main(){
                 cout << "-------------------------" << endl;
                 break;
             }
-            case 10:
+            case 9:
             	sinhVienNamCaoDiemNhatVaNuThapDiemNhat(sv1, n);
                 break;
-            case 11:
+            case 10:
 			    danhSachSinhVienTenBatDauBangN(sv1, n);
                 break;
             case 0:
@@ -273,4 +257,3 @@ int main(){
 
     return 0;
 }
-
