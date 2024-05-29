@@ -254,6 +254,6 @@ int main(){
                 break;
         }
     } while (luachon != 0);
-
+    delete[] sv1;
     return 0;
 }
